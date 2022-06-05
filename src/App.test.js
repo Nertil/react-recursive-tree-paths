@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders app title', () => {
+test('renders input filed and treelist', () => {
   render(<App />);
-  const titleElement = screen.getByText(/recursive tree paths/i);
-  expect(titleElement).toBeInTheDocument();
+  expect(screen.getByLabelText(/insert here your input data/i)).toBeInTheDocument();
+  expect(screen.getByTestId('tree-list')).toBeInTheDocument();
 });
